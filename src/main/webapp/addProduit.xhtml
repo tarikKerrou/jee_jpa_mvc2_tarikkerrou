@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<title>Ajouter Produit</title>
+
+</h:head>
+
+<h:body style=" margin: 30px; background-color: #D7BDE2 ; font-size: 20px;">
+	<center>
+		<h2>
+			<h:outputText value="Ajouter un produit" />
+		</h2>
+	</center>
+	<center>
+		<h:form id="form">
+
+			<div>
+				<h:outputLabel> Nom </h:outputLabel>
+				<div>
+					<h:inputText value="#{ProduitBean.nom_prod}"
+						style="width: 200px; height: 20px;"></h:inputText>
+				</div>
+			</div>
+			<br />
+			<div>
+				<h:outputLabel>Quantité </h:outputLabel>
+				<div>
+					<h:inputText value="#{ProduitBean.qte_prod}"
+						style="width: 200px; height: 20px;"></h:inputText>
+				</div>
+			</div>
+			<br />
+			<div>
+				<h:outputLabel>Prix </h:outputLabel>
+				<div>
+					<h:inputText value="#{ProduitBean.pu}"
+						style="width: 200px; height: 20px;"></h:inputText>
+				</div>
+			</div>
+			<br />
+
+			<div>
+				<h:commandButton value="Save"
+					action="#{ProduitBean.Save(ProduitBean)}"></h:commandButton>
+			</div>
+			<br />
+			<div>
+				<h:outputLink value="listProduits.xhtml">Liste produits</h:outputLink>
+			</div>
+
+		</h:form>
+	</center>
+</h:body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<title>Ajouter Commande</title>
+
+</h:head>
+
+<h:body style=" margin: 30px; background-color: #D7BDE2 ; font-size: 20px;">
+	<center>
+		<h2>
+			<h:outputText value="Ajouter une commande" />
+		</h2>
+	</center>
+	<center>
+		<h:form id="form">
+
+			<div>
+				<h:outputLabel> Date de Commande </h:outputLabel>
+				<div>
+					<h:inputText value="#{CommandeBean.date_cmd}"
+						 style="width: 200px; height: 20px;">
+					</h:inputText>
+				</div>
+			</div>
+			<br />
+			<div>
+				<h:outputLabel>User </h:outputLabel>
+				<div>
+					<h:inputText value="#{CommandeBean.id_user}"
+						style="width: 200px; height: 20px;"></h:inputText>
+				</div>
+			</div>
+			<br />
+
+			<div>
+				<h:commandButton value="Save"
+					action="#{CommandeBean.Save(CommandeBean)}"></h:commandButton>
+			</div>
+			<br />
+			<div>
+				<h:outputLink value="listCommandes.xhtml">Liste Commandes</h:outputLink>
+			</div>
+
+		</h:form>
+	</center>
+</h:body>
+
+</html>

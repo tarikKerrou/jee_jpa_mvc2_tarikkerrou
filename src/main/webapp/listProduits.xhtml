@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Produits</title>
+</h:head>
+<h:body style=" margin: 30px; background-color: #D7BDE2 ; font-size: 20px;">
+	<center>
+		<h2>
+			<h:outputText value=" Produits" />
+		</h2>
+	</center>
+	<h:form>
+		<center>
+			<b:dataTable binding="#{table}" value="#{ProduitBean.listProduits()}"
+				var="prod" bootstrapHover="true" bootstrapStriped="false"
+				bootstrapResponsive="true">
+				<b:column>
+					<f:facet name="header">Id</f:facet>
+					<h:outputText id="id_prod" value="#{prod.id_prod}" />
+				</b:column>
+
+				<b:column>
+					<f:facet name="header">Nom</f:facet>
+					<h:outputText value="#{prod.nom_prod}" />
+				</b:column>
+
+
+				<b:column>
+					<f:facet name="header">Quantité</f:facet>
+					<h:outputText value="#{prod.qte_prod}" />
+				</b:column>
+
+				<b:column>
+					<f:facet name="header">Prix unitaire</f:facet>
+					<h:outputText value="#{prod.pu}" />
+				</b:column>
+
+
+
+
+				<b:column>
+					<f:facet name="header">Update</f:facet>
+					<h:commandButton action="#{ProduitBean.updateProduit(prod.id_prod)}"
+						value="Update" />
+				</b:column>
+
+				<b:column>
+					<f:facet name="header">Delete</f:facet>
+					<h:commandButton action="#{ProduitBean.delete(prod.id_prod)}"
+						value="Delete" />
+				</b:column>
+
+			</b:dataTable>
+		</center>
+		<center>
+			<div>
+				<h:commandButton action="addProduit.xhtml?faces-redirect=true"
+					value="Ajouter Produit" />
+			</div>
+			<br />
+			<div>
+				<h:outputLink value="home.xhtml"> Home </h:outputLink>
+			</div>
+		</center>
+	</h:form>
+</h:body>
+
+</html>
